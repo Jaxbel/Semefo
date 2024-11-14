@@ -1,0 +1,57 @@
+﻿@page "/cuerpo"
+
+
+
+<h3>Cuerpos</h3>
+
+@if (CuerpoModels == null)
+{
+    <p>Loading ...</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Procesamiento</th>
+                <th>Orden Fiscalia</th>
+                <th>No. Caso</th>
+                <th>Fiscalia Remitente</th>
+                <th>Medico Legista</th>
+                <th>No. Certificado</th>
+                <th>Dictamen</th>
+                <th>Identificacion</th>
+                <th>Disposicion</th>
+                <th>Señas Particulares</th>
+                <th>Fecha Creacion</th>
+                <th>Fecha Modificacion</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cuerpo in CuerpoModels)
+            {
+                <tr>
+                    <td>@cuerpo.ID</td>
+                    <td>@cuerpo.Procesamiento</td>
+                    <td>@cuerpo.OrdenFiscalia</td>
+                    <td>@cuerpo.NumeroCaso</td>
+                    <td>@cuerpo.FiscaliaRemitente</td>
+                    <td>@cuerpo.MedicoLegista</td>
+                    <td>@cuerpo.NumeroCertificado</td>
+                    <td>@cuerpo.Dictamen</td>
+                    <td>@cuerpo.Identificacion</td>
+                    <td>@cuerpo.Disposicion</td>
+                    <td>@cuerpo.SenasParticulares</td>
+                    <td>@cuerpo.FechaCreacion.ToShortDateString()</td>
+                    <td>@cuerpo.FechaModificacion.ToShortDateString()</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm">Update</a>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
